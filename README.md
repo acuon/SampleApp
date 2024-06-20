@@ -10,4 +10,4 @@ To run this application on your local machine or Android device, follow these st
    ```bash
    https://github.com/acuon/SampleApp
 
-2. **Build the app:**
+2. **Build the app and run**
