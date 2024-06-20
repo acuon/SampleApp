@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.acuon.sampleapp.domain.model.UserItem" />
+
+        <import type="com.acuon.sampleapp.R" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_rounded_corner_8dp"
+        android:backgroundTint="#121212"
+        android:elevation="@dimen/_16dp"
+        android:padding="@dimen/_16dp">
+
+        <ImageView
+            android:id="@+id/iv_favorite"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_favorite"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_favorite_filled" />
+
+        <TextView
+            android:id="@+id/tv_company_name"
+            android:layout_width="@dimen/_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8dp"
+            android:text="@{`Company name: ` + item.companyName}"
+            android:textColor="@color/white"
+            android:textSize="@dimen/ts_18sp"
+            app:layout_constraintEnd_toStartOf="@id/iv_favorite"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_name"
+            tools:text="company name: demo" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{item.id + `. ` + item.name}"
+            android:textColor="@color/white"
+            android:textSize="@dimen/ts_20sp"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="1. Rohit Sharma" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
