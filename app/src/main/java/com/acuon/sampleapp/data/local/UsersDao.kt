@@ -41,6 +41,6 @@ interface UsersDao {
     @Query("UPDATE Users SET isFavorite = :favorite WHERE id = :id")
     fun addToFavorite(id: Int, favorite: Boolean)
 
-    @Update
+    @Update(onConflict = OnConflictStrategy.REPLACE)
     fun updateUser(user: UserItem): Int
 }

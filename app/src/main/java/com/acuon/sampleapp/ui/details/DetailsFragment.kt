@@ -118,6 +118,8 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>() {
             binding.btnUpdate -> {
                 if (viewModel.editMode.get()) {
                     viewModel.updateUser()
+                    showToast("user updated")
+                    findNavController().popBackStack()
                 }
                 viewModel.setUpdateButton()
             }
